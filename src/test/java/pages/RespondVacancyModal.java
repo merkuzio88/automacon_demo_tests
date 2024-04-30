@@ -3,9 +3,11 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
+import java.util.Arrays;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RespondVacancyModal {
 
@@ -23,7 +25,11 @@ public class RespondVacancyModal {
 
     @Step("Check error message when required fields are not filled")
     public RespondVacancyModal checkErrorMessage() {
-        errorMessage.shouldBe(visible).shouldHave(text("Пожалуйста, заполните все обязательные поля"));
+        String[] expectedTexts = {"Please fill out all required fields", "Пожалуйста, заполните все обязательные поля"};
+
+        assertTrue(Arrays.stream(expectedTexts)
+                        .anyMatch(text -> errorMessage.getText().equals(text)),
+                "Error message doesn't match any expected text");
 
         return this;
     }
