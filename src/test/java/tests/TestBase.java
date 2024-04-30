@@ -18,26 +18,26 @@ public class TestBase {
     static void setUpConfig() {
         browser = System.getProperty("browser", "chrome");
         browserSize = System.getProperty("browserSize", "1920x1080");
-//        browserVersion = System.getProperty("browserVersion", "120.0");
+        browserVersion = System.getProperty("browserVersion", "120.0");
         baseUrl = "https://job.automacon.ru";
         pageLoadStrategy = "eager";
-//        remote = "https://user1:1234@" + System.getProperty("wdHost", "selenoid.autotests.cloud") + "/wd/hub";
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-//                "enableVNC", true,
-//                "enableVideo", true
-//        ));
-//        browserCapabilities = capabilities;
-//
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        remote = "https://user1:1234@" + System.getProperty("wdHost", "selenoid.autotests.cloud") + "/wd/hub";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        browserCapabilities = capabilities;
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-//    @AfterEach
-//    void afterEach() {
-//        screenshotAs("Last screenshot");
-//        pageSource();
-//        browserConsoleLogs();
-//        addVideo();
-//        closeWebDriver();
-//    }
+    @AfterEach
+    void afterEach() {
+        screenshotAs("Last screenshot");
+        pageSource();
+        browserConsoleLogs();
+        addVideo();
+        closeWebDriver();
+    }
 }

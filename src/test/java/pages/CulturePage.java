@@ -9,11 +9,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CulturePage {
 
-    private final SelenideElement pageHeader = $("[field='tn_text_1470210011265']");
+    private final SelenideElement pageTitle = $("[field='tn_text_1470210011265']");
 
-    @Step("Check corporate culture page header")
-    public CulturePage checkPageHeader() {
-        pageHeader.shouldBe(visible).shouldHave(text("Корпоративная культура"));
+    @Step("Check corporate culture page title")
+    public CulturePage checkPageTitle() {
+        pageTitle.shouldBe(visible).shouldHave(text("Корпоративная культура"));
 
         return this;
     }

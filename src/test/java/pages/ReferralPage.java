@@ -9,11 +9,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ReferralPage {
 
-    private final SelenideElement pageHeader = $("[field='tn_text_1470210011265']");
+    private final SelenideElement pageTitle = $("[field='tn_text_1470210011265']");
 
-    @Step("Check vacancies page header")
-    public ReferralPage checkPageHeader() {
-        pageHeader.shouldBe(visible).shouldHave(text("Реферальная программа «Автомакон Таланты»"));
+    @Step("Check vacancies page title")
+    public ReferralPage checkPageTitle() {
+        pageTitle.shouldBe(visible).shouldHave(text("Реферальная программа «Автомакон Таланты»"));
 
         return this;
     }

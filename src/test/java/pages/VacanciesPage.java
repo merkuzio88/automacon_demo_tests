@@ -8,11 +8,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class VacanciesPage {
 
-    private final SelenideElement pageHeader = $(".survey-h3");
+    private final SelenideElement pageTitle = $(".survey-h3");
 
-    @Step("Check vacancies page header")
-    public VacanciesPage checkPageHeader() {
-        pageHeader.shouldBe(visible).shouldHave(text("Вакансии"));
+    @Step("Check vacancies page title")
+    public VacanciesPage checkPageTitle() {
+        pageTitle.shouldBe(visible).shouldHave(text("Вакансии"));
 
         return this;
     }
