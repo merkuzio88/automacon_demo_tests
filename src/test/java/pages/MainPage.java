@@ -68,21 +68,21 @@ public class MainPage {
 
     @Step("Open first vacancy page from main page")
     public MainPage openFirstVacancyPage() {
-        moreDetailedVacancy.scrollIntoView(true).click();
+        moreDetailedVacancy.scrollIntoView(false).click();
 
         return this;
     }
 
     @Step("Open first vacancy respond modal from main page")
     public MainPage openFirstVacancyRespondModal() {
-        respondVacancy.scrollIntoView(true).click();
+        respondVacancy.scrollIntoView(false).click();
 
         return this;
     }
 
     @Step("Load all vacancies cards")
     public MainPage loadAllVacanciesCards() {
-        moreButton.scrollIntoView(true).click();
+        moreButton.scrollIntoView(false).click();
 
         return this;
     }
@@ -98,7 +98,7 @@ public class MainPage {
     public MainPage checkThatAllVacanciesCardsDisplayed(Integer numberOfVacancies) {
         vacanciesCards.shouldHave(size(numberOfVacancies))
                 .asDynamicIterable().stream().forEach(
-                card -> card.scrollIntoView(true).shouldNotHave(attribute("[style='display: none;']"))
+                card -> card.scrollIntoView(false).shouldNotHave(attribute("[style='display: none;']"))
         );
 
         return this;
