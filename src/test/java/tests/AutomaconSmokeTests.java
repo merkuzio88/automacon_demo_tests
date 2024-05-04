@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import pages.*;
 
 @Tag("automacon_tests")
-public class SmokeTests extends TestBase {
+public class AutomaconSmokeTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     VacanciesPage vacanciesPage = new VacanciesPage();
@@ -21,7 +21,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Open vacancies page and check title")
-    void openVacanciesPageAndCheckTitle() {
+    void openVacanciesPageAndCheckTitleTest() {
         mainPage.openMainPage()
                 .openVacanciesPage();
         vacanciesPage.checkPageTitle();
@@ -30,7 +30,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Open corporate culture page and check title")
-    void openCulturePageAndCheckTitle() {
+    void openCulturePageAndCheckTitleTest() {
         mainPage.openMainPage()
                 .openCulturePage();
         culturePage.checkPageTitle();
@@ -39,7 +39,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Open media page and check title")
-    void openMediaPageAndCheckTitle() {
+    void openMediaPageAndCheckTitleTest() {
         mainPage.openMainPage()
                 .openMediaPage();
         mediaPage.checkPageTitle();
@@ -48,7 +48,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Open referral page and check title")
-    void openReferralPageAndCheckTitle() {
+    void openReferralPageAndCheckTitleTest() {
         mainPage.openMainPage()
                 .openReferralPage();
         referralPage.checkPageTitle();
@@ -57,7 +57,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Open first vacancy page and check title")
-    void openFirstVacancyPageAndCheckTitle() {
+    void openFirstVacancyPageAndCheckTitleTest() {
         mainPage.openMainPage();
         String vacancyTitle = mainPage.getFirstVacancyTitle();
         mainPage.openFirstVacancyPage();
@@ -67,7 +67,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Open first vacancy respond modal and check error message when required fields not filled")
-    void openFirstVacancyRespondModalAndCheckErrorMessage() {
+    void openFirstVacancyRespondModalAndCheckErrorMessageTest() {
         mainPage.openMainPage()
                 .openFirstVacancyRespondModal();
         respondVacancyModal.pressSubmitButton()
@@ -77,7 +77,7 @@ public class SmokeTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Load all vacancies cards and check that all cards displayed")
-    void loadAllVacanciesCardsAndCheckThatNumberOfCardsMatches() {
+    void loadAllVacanciesCardsAndCheckThatNumberOfCardsMatchesTest() {
         mainPage.openMainPage();
         Integer numberOfVacancies = mainPage.getNumberOfVacancies();
         mainPage.loadAllVacanciesCards();
